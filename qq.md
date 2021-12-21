@@ -50,4 +50,5 @@ REGEDIT4
 # 注册表生效，这里会包一个错
 cd ~/.deepinwine/Spark-TIM
 env WINEPREFIX="$HOME/.deepinwine/Spark-TIM/" deepin-wine5 regedit msyh_config.reg
+# [报错] Wine cannot find the ncurses library (libncurses.so.6).
 ```
