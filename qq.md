@@ -19,3 +19,35 @@ yay -S com.qq.weixin.deepin
 # 调整WeChat字体大小 196
 env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat/" /usr/bin/deepin-wine6-stable winecfg
 ```
+
+## TIMQQ 标题框显示白框(操作未解决问题)
+字体可能需要从win下载再试试
+```
+# 下载字体
+git clone git@github.com:L-King-H/msyh.ttc.git
+cd msyh.ttc
+cp 微软雅黑/* ~/.deepinwine/Spark-TIM/drive_c/windows/Fonts/
+cd ~/.deepinwine/Spark-TIM/drive_c/windows/Fonts/ 
+mv MSYH.TTC  msyh.ttc
+```
+
+```
+# 创建一个reg文件
+# filename: msyh_config.reg
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
+"Lucida Sans Unicode"="msyh.ttc"
+"Microsoft Sans Serif"="msyh.ttc"
+"MS Sans Serif"="msyh.ttc"
+"Tahoma"="msyh.ttc"
+"Tahoma Bold"="msyhbd.ttc"
+"msyh"="msyh.ttc"
+"Arial"="msyh.ttc"
+"Arial Black"="msyh.ttc"
+```
+
+```
+# 注册表生效，这里会包一个错
+cd ~/.deepinwine/Spark-TIM
+env WINEPREFIX="$HOME/.deepinwine/Spark-TIM/" deepin-wine5 regedit msyh_config.reg
+```
