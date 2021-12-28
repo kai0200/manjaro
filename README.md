@@ -1,5 +1,3 @@
-# manjaro
-<!-- set foldmethod=marker -->
 # MacBook 安装 Manjaro
   2013年的老mac已经无法适应新系统的升级、电池鼓包以后考虑放家里作为一个临时机器使用。
   CPU: i5

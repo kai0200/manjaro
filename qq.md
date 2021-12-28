@@ -19,7 +19,7 @@ fc-cache -fv
 yay -S com.qq.tim.spark
 ```
 
-## 调整字体 显示-> DPI -> 196
+## 调整字体 显示-> DPI -> 192 (默认96×2)
 ```
 env WINEPREFIX="$HOME/.deepinwine/Spark-TIM" deepin-wine5 winecfg
 ```
@@ -30,13 +30,25 @@ env WINEPREFIX="$HOME/.deepinwine/Spark-TIM" deepin-wine5 winecfg
 yay -S com.qq.weixin.deepin
 ```
 
-## 调整WeChat字体大小 196
+## 调整WeChat字体大小 192
 ```
 env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat/" /usr/bin/deepin-wine6-stable winecfg
 ```
 
+## wechat输入显示方框
+```
+系统语言非中文时，中文全显示成方块，需要在
+
+/opt/deepinwine/tools/run.sh
+
+中将 WINE_CMD 那一行修改为
+
+WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"
+```
+
 ## TIM(QQ) 标题框显示白框
-出现空子符框，没有仔细研究，拷贝字体目录省事了。
+应该是字体库没有装全，等安装玩wps再看一下，
+如果还出现空子符框，拷贝字体目录省事了。
 ```
 find /usr/share/fonts -name 'msyh.*' # 发现有msyh字体
 # 拷贝字体后解决
@@ -48,8 +60,8 @@ systemctl reboot
 
 ## Tim卡顿现象尝试gnome
 卡顿现象还是有搜了几次暂时先按以下配置操作。
-```
 Manjaro-kde桌面安装TIM/QQ的时候经常出现无法启动，其主要原因是deein-wine-tim打包了Gnome桌面部分内容，因此在KDE桌面环境下需要安装相应的Gnome桌面设置环境
+```
 yay -S gnome-settings-daemon
 cp /etc/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop ~/.config/autostart
 
