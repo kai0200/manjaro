@@ -1,0 +1,10 @@
+/** Basic config file **/
+
+configuration {
+  modi: "window,drun,ssh,combi";
+  show-icons:         true;
+  combi-modi: "window,drun,ssh,combi";
+  icon-theme:         "Papirus";
+  dip:                192;
+  font: "DejaVu Sans Mono for Powerline 24";
+}

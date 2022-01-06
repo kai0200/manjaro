@@ -38,8 +38,8 @@ env WINEPREFIX="$HOME/.deepinwine/Spark-TIM" deepin-wine5 winecfg
 如果还出现空子符框，拷贝字体目录省事了。
 ```
 find /usr/share/fonts -name 'msyh.*' # 发现有msyh字体
-# 拷贝字体后解决
-cp /usr/share/fonts/vista/Fonts/* ~/.deepinwine/Spark-TIM/drive_c/windows/Fonts/
+# ln字体后解决
+ln -s /usr/share/fonts/vista/Fonts/* ~/.deepinwine/Spark-TIM/drive_c/windows/Fonts/
 
 # 重启机器
 systemctl reboot
