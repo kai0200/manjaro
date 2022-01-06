@@ -62,9 +62,16 @@ echo "/usr/lib/gsd-xsettings &" >> ~/.xinitrc
 这里感觉上com.qq.weixin.deepin整合做的比较好，基本安装完毕不需要调整。
 ```
 yay -S com.qq.weixin.deepin
-# 新包跟以前不太一样啦 直接升级就没法启动了 需要安装依赖 deepin-wine-helper和deepin-wine6-stable
+
+# 2021-09-10 新包跟以前不太一样啦 直接升级就没法启动了 需要安装依赖 deepin-wine-helper和deepin-wine6-stable
 
 yay -S deepin-wine-helper deepin-wine6-stable
+```
+
+## WeChat 不能发送文件
+```
+run.sh 中设置
+GDK_BACKEND=x11 lxappearance
 ```
 
 ## 调整WeChat字体大小 192
