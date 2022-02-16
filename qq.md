@@ -38,8 +38,8 @@ env WINEPREFIX="$HOME/.deepinwine/Spark-TIM" deepin-wine5 winecfg
 如果还出现空子符框，拷贝字体目录省事了。
 ```
 find /usr/share/fonts -name 'msyh.*' # 发现有msyh字体
-# ln字体后解决
-ln -s /usr/share/fonts/vista/Fonts/* ~/.deepinwine/Spark-TIM/drive_c/windows/Fonts/
+# 拷贝字体后解决
+ln -s /usr/share/fonts/vista    /home/caler/.deepinwine/Spark-TIM/drive_c/windows/Fonts/
 
 # 重启机器
 systemctl reboot
@@ -81,6 +81,10 @@ env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat/" /usr/bin/deepin-wine6-stable w
 
 ## wechat输入显示方框
 ```
+ln -s /usr/share/fonts/vista    /home/caler/.deepinwine/Deepin-WeChat/drive_c/windows/Fonts/
+
+# 先尝试ln字体库，如果还有问题再操作以下步骤。
+
 1. 尝试安装 yay -S  winetricks
 
 2. 尝试系统语言非中文时，中文全显示成方块，需要在
