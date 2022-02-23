@@ -49,4 +49,8 @@ sudo pacman -Syu
 sudo pacman -S alacritty
 
 
+## 命令总结
+```
+sudo pacman -Qo /usr/bin/fc-cache  # 查找文件属于哪个在线的包
+```
 
